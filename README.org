@@ -1,0 +1,62 @@
+#+TITLE: V-Block
+#+AUTHOR: Thomas Stephen Lee, Puneeth Chaganti
+#+DATE: 
+#+OPTIONS: toc:nil H:3 
+
+V-Block is an Android app/hack that let's you block calls from
+unwanted numbers.  There are quite a few apps that already allow
+Android users to block calls from unknown numbers.  The USP of this
+app is that, it allows users to share the numbers through Google docs.
+
+V-Block is licensed as GPL v3. 
+
+*** How it works
+    - The user saves his/her Google authentication details in the
+      app.
+    - The user accesses (or creates) a Google document that he wishes
+      to share numbers in.  All the users who wish to share this
+      document need to have access to this doc and open it at least
+      once, so that it is added to their list of documents.
+    - Once the user starts the app, the list of existing blocked
+      numbers (if any) is synchronized on the phone.
+    - If the user gets a call from one of the blocked numbers, the
+      phone automatically switches to silent mode, and an alert
+      message, saying "Blocked Number" is shown.
+    - If the user gets a new call, the user is prompted with a dialog
+      box, asking if the number should be blocked.  If the user
+      chooses to block the number, it is added to the block list and
+      the Google doc is updated.
+
+*** Dependencies
+    - sl4a (Scripting Layer for Android)
+    - Python for Android
+*** Possible Improvements
+    - We, the authors, weren't well versed with Java and hence chose
+      Python.  But, the /Scripting Layer for Android/ (SL4A) provides
+      a very limited API.  This app could be greatly improved if
+      re-written in Java.
+    - Android phones (generally) already save Google authentication
+      data.  The app, presently, requires users to enter it again,
+      separately.  This could possibly be fixed, if the app is
+      re-written in Java.  (Not possible from the scripting API)
+    - The app presently prompts blocking every number which has not
+      already been blocked.  It would be good if the prompt doesn't
+      appear for calls from numbers in the contact list.  (This also,
+      isn't possible from the scripting API)
+    - The app synchronizes the list of numbers, each time the app is
+      started and each time a new number is added.  Ideally this
+      should be separated into a separate script that can be run
+      periodically, where the time period is user-configurable.
+    - Functionality could be extended to block SMSes as well.  (Again
+      not possible from the scripting API)
+    - The phone presently goes into a silent mode, but the vibration
+      continues.  Disabling this, also, is not possible from the
+      scripting API. 
+    - A better user-interface, that allows deletion of numbers,
+      viewing of blocked numbers etc, would be good.
+
+*** References for Development
+    - [[http://google-opensource.blogspot.com/2009/06/introducing-android-scripting.html][Introducing Android Scripting Environment - Google Open Source Blog]]
+    - [[https://code.google.com/p/android-scripting/wiki/ApiReference][ApiReference - android-scripting - Project Hosting on Google Code]]
+    - [[http://code.google.com/apis/documents/docs/1.0/developers_guide_python.html#RetrievingByTitleExact][Python Language Guide (v1.0) - Google Documents List Data API v1.0 - Google Code]]
+
