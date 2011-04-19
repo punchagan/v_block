@@ -8,6 +8,9 @@ unwanted numbers.  There are quite a few apps that already allow
 Android users to block calls from unknown numbers.  The USP of this
 app is that, it allows users to share the numbers through Google docs.
 
+This app was developed in a HackNight organized by a club in my
+University.  Hence, is "Hacky". 
+
 V-Block is licensed as GPL v3. 
 
 *** How it works
@@ -41,8 +44,9 @@ V-Block is licensed as GPL v3.
       re-written in Java.  (Not possible from the scripting API)
     - The app presently prompts blocking every number which has not
       already been blocked.  It would be good if the prompt doesn't
-      appear for calls from numbers in the contact list.  (This also,
-      isn't possible from the scripting API)
+      appear for calls from numbers in the contact list.  (This has
+      been added to the contacts API, recently. This feature should be
+      easy to add, now.)
     - The app synchronizes the list of numbers, each time the app is
       started and each time a new number is added.  Ideally this
       should be separated into a separate script that can be run
